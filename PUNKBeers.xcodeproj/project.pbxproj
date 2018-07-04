@@ -11,15 +11,21 @@
 		5E0190B120EA937C00C61F62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0190AF20EA937C00C61F62 /* Main.storyboard */; };
 		5E0190B320EA937D00C61F62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E0190B220EA937D00C61F62 /* Assets.xcassets */; };
 		5E0190B620EA937D00C61F62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0190B420EA937D00C61F62 /* LaunchScreen.storyboard */; };
+		5E13965B20ED3800005F8CF5 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E13965A20ED3800005F8CF5 /* Beer.swift */; };
+		B1D5CE0C0FBAC3C2897E2CE3 /* Pods_PUNKBeers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD5876EA3CE1AB1ADA49AD7 /* Pods_PUNKBeers.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4FAC7C8419B0B2CA715BDBA0 /* Pods-PUNKBeers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PUNKBeers.release.xcconfig"; path = "Pods/Target Support Files/Pods-PUNKBeers/Pods-PUNKBeers.release.xcconfig"; sourceTree = "<group>"; };
 		5E0190A820EA937C00C61F62 /* PUNKBeers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PUNKBeers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E0190AB20EA937C00C61F62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E0190B020EA937C00C61F62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5E0190B220EA937D00C61F62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E0190B520EA937D00C61F62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E0190B720EA937D00C61F62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E13965A20ED3800005F8CF5 /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
+		8CD5876EA3CE1AB1ADA49AD7 /* Pods_PUNKBeers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PUNKBeers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C08C538F69CC26D912DA87A2 /* Pods-PUNKBeers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PUNKBeers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PUNKBeers/Pods-PUNKBeers.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1D5CE0C0FBAC3C2897E2CE3 /* Pods_PUNKBeers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		242BFDE3492183FCCF010A83 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C08C538F69CC26D912DA87A2 /* Pods-PUNKBeers.debug.xcconfig */,
+				4FAC7C8419B0B2CA715BDBA0 /* Pods-PUNKBeers.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5E01909F20EA937C00C61F62 = {
 			isa = PBXGroup;
 			children = (
 				5E0190AA20EA937C00C61F62 /* PUNKBeers */,
 				5E0190A920EA937C00C61F62 /* Products */,
+				242BFDE3492183FCCF010A83 /* Pods */,
+				DB11F081005F3057901A5880 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +91,7 @@
 		5E0190BE20EA93AA00C61F62 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5E13965A20ED3800005F8CF5 /* Beer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -93,6 +112,14 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		DB11F081005F3057901A5880 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CD5876EA3CE1AB1ADA49AD7 /* Pods_PUNKBeers.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -100,9 +127,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E0190BA20EA937D00C61F62 /* Build configuration list for PBXNativeTarget "PUNKBeers" */;
 			buildPhases = (
+				7FE06E4949838AAD3C372E82 /* [CP] Check Pods Manifest.lock */,
 				5E0190A420EA937C00C61F62 /* Sources */,
 				5E0190A520EA937C00C61F62 /* Frameworks */,
 				5E0190A620EA937C00C61F62 /* Resources */,
+				B8AA2164EF0CA50C5A2B11B2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -159,12 +188,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7FE06E4949838AAD3C372E82 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PUNKBeers-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8AA2164EF0CA50C5A2B11B2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PUNKBeers/Pods-PUNKBeers-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PUNKBeers/Pods-PUNKBeers-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5E0190A420EA937C00C61F62 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5E0190AC20EA937C00C61F62 /* AppDelegate.swift in Sources */,
+				5E13965B20ED3800005F8CF5 /* Beer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,31 +375,39 @@
 		};
 		5E0190BB20EA937D00C61F62 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C08C538F69CC26D912DA87A2 /* Pods-PUNKBeers.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D67XBEEN3L;
 				INFOPLIST_FILE = PUNKBeers/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.MatheusFusco.PUNKBeers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		5E0190BC20EA937D00C61F62 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FAC7C8419B0B2CA715BDBA0 /* Pods-PUNKBeers.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D67XBEEN3L;
 				INFOPLIST_FILE = PUNKBeers/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.MatheusFusco.PUNKBeers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
