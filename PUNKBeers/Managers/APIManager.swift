@@ -29,6 +29,13 @@ enum HTTPMethod: String {
     
 }
 
+struct Handler {
+    typealias Success = (Data) -> Void
+    typealias Error = (APIError) -> Void
+    typealias Beers = ([Beer]) -> Void
+    typealias OneBeer = (Beer) -> Void
+}
+
 class APIManager: NSObject {
 
     static var basePath = "https://api.punkapi.com/v2/beers"
@@ -42,10 +49,7 @@ class APIManager: NSObject {
     }()
     private static let sesssion = URLSession(configuration: configuration)
     
-    private typealias SuccessHandler = (Data) -> Void
-    private typealias ErrorHandler = (APIError) -> Void
-    
-    private static func applyOperation(httpMethod: HTTPMethod, parameters: [String: String]?, onComplete: @escaping SuccessHandler, onError: @escaping ErrorHandler) {
+    private static func applyOperation(httpMethod: HTTPMethod, parameters: [String: String]?, onComplete: @escaping Handler.Success, onError: @escaping Handler.Error) {
         guard let url = URL(string: basePath) else {
             onError(.url)
             return

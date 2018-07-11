@@ -9,8 +9,8 @@
 import UIKit
 
 final class BeerManager: APIManager {
-    
-    private static func getBeers(params: [String: String]?, onComplete: @escaping ([Beer]) -> Void, onError: @escaping (APIError) -> Void) {
+
+    private static func getBeers(params: [String: String]?, onComplete: @escaping Handler.Beers, onError: @escaping Handler.Error) {
         self.GET(parameters: params, onComplete: { (data) in
             do {
                 let beers = try JSONDecoder().decode([Beer].self, from: data)
@@ -24,7 +24,7 @@ final class BeerManager: APIManager {
         }
     }
     
-    static func getBeersList(page: Int, onComplete: @escaping ([Beer]) -> Void, onError: @escaping (APIError) -> Void) {
+    static func getBeersList(page: Int, onComplete: @escaping Handler.Beers, onError: @escaping Handler.Error) {
         let params = ["per_page" : "20",
                           "page" : "\(page)"]
         
@@ -35,7 +35,7 @@ final class BeerManager: APIManager {
         }
     }
     
-    static func getRandomBeer(onComplete: @escaping (Beer) -> Void, onError: @escaping (APIError) -> Void) {
+    static func getRandomBeer(onComplete: @escaping Handler.OneBeer, onError: @escaping Handler.Error) {
         self.basePath += "/random"
         
         self.getBeers(params: nil, onComplete: { (beers) in
@@ -45,7 +45,7 @@ final class BeerManager: APIManager {
         }
     }
     
-    static func getSpecificBeer(beerID: Int, onComplete: @escaping (Beer) -> Void, onError: @escaping (APIError) -> Void) {
+    static func getSpecificBeer(beerID: Int, onComplete: @escaping Handler.OneBeer, onError: @escaping Handler.Error) {
         
         self.basePath += "/\(beerID)"
         

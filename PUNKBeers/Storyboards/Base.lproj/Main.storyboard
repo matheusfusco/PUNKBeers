@@ -42,10 +42,10 @@
             </objects>
             <point key="canvasLocation" x="648.79999999999995" y="67.916041979010501"/>
         </scene>
-        <!--View Controller-->
+        <!--Beer Detail View Controller-->
         <scene sceneID="Igy-yW-f8Z">
             <objects>
-                <viewController id="E43-ub-4hg" sceneMemberID="viewController">
+                <viewController id="E43-ub-4hg" customClass="BeerDetailViewController" customModule="PUNKBeers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4XV-3X-He2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
