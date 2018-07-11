@@ -8,21 +8,21 @@
 
 import Foundation
 
-class Beer: Codable {
+struct Beer: Codable {
     var id: Int
     var name: String
     var tagline: String
     var first_brewed: String
     var description: String
     var image_url: String
-    var abv: Double
-    var ibu: Double
-    var target_fg: Double
-    var target_og: Double
-    var ebc: Double
-    var srm: Double
-    var ph: Double
-    var attenuation_level: Double
+    var abv: Float
+    var ibu: Float
+    var target_fg: Float
+    var target_og: Float
+    var ebc: Float
+    var srm: Float
+    var ph: Float
+    var attenuation_level: Float
     var volume: ValueUnit
     var boil_volume: ValueUnit
     var method: Method
@@ -30,47 +30,55 @@ class Beer: Codable {
     var food_pairing: [String]
     var brewers_tips: String
     var contributed_by: String
+    
+//    init(from decoder: Decoder) throws {
+//        let container = try decoder.container(keyedBy: CodingKeys.self)
+//
+//        if let abv = try? container.decode(Int.self, forKey: .abv) {
+//            self.abv = String(abv)
+//        }
+//        else {
+//            self.abv =
+//        }
+//    }
 }
 
-class ValueUnit: Codable {
-    var value: Double
+struct ValueUnit: Codable {
+    var value: Float
     var unit: String
 }
 
-class Method: Codable {
+struct Method: Codable {
     var mash_temp: [MashTemp]
     var fermentation: Fermentation
-    var twist: String
+    var twist: String?
 }
 
-class MashTemp: Codable {
+struct MashTemp: Codable {
     var temp: ValueUnit
-    var duration: Double
+    var duration: Float?
 }
 
-class Fermentation: Codable {
+struct Fermentation: Codable {
     var temp: ValueUnit
 }
 
-class Ingredients: Codable {
+struct Ingredients: Codable {
     var malt: [Malt]
-    var Hops: [Hops]
+    var hops: [Hops]
     var yeast: String
 }
 
-class Malt: Codable {
-    var nameAmount: NameAmount
-}
-
-class Hops: Codable {
-    var nameAmount: NameAmount
-    var add: String
-    var attribute: String
-}
-
-class NameAmount: Codable {
+struct Malt: Codable {
     var name: String
     var amount: ValueUnit
+}
+
+struct Hops: Codable {
+    var name: String
+    var amount: ValueUnit
+    var add: String
+    var attribute: String
 }
 
 //MARK: - JSON Example
