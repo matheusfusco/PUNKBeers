@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BeerManager: APIManager {
+final class BeerManager: APIManager {
     
     private static func getBeers(params: [String: String]?, onComplete: @escaping ([Beer]) -> Void, onError: @escaping (APIError) -> Void) {
         self.GET(parameters: params, onComplete: { (data) in

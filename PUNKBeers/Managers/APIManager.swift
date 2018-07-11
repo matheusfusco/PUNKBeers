@@ -17,6 +17,18 @@ enum APIError {
     case invalidJSON
 }
 
+enum HTTPMethod: String {
+    case get = "GET"
+    case post = "POST"
+    case put = "PUT"
+    case delete = "DELETE"
+    
+    var method: String {
+        return self.rawValue
+    }
+    
+}
+
 class APIManager: NSObject {
 
     static var basePath = "https://api.punkapi.com/v2/beers"
@@ -30,7 +42,10 @@ class APIManager: NSObject {
     }()
     private static let sesssion = URLSession(configuration: configuration)
     
-    static func GET(parameters: [String: String]?, onComplete: @escaping(Data) -> Void, onError: @escaping(APIError) -> Void) {
+    private typealias SuccessHandler = (Data) -> Void
+    private typealias ErrorHandler = (APIError) -> Void
+    
+    private static func applyOperation(httpMethod: HTTPMethod, parameters: [String: String]?, onComplete: @escaping SuccessHandler, onError: @escaping ErrorHandler) {
         guard let url = URL(string: basePath) else {
             onError(.url)
             return
@@ -46,7 +61,8 @@ class APIManager: NSObject {
             urlComp!.queryItems = queryItems
         }
         
-        let urlRequest = URLRequest(url: urlComp!.url!)
+        var urlRequest = URLRequest(url: urlComp!.url!)
+        urlRequest.httpMethod = httpMethod.method
         
         let dataTask = sesssion.dataTask(with: urlRequest) { (data, urlResponse, error) in
             if error != nil {
@@ -72,5 +88,14 @@ class APIManager: NSObject {
             }
         }
         dataTask.resume()
+    }
+    
+    
+    static func GET(parameters: [String: String]?, onComplete: @escaping(Data) -> Void, onError: @escaping(APIError) -> Void) {
+        applyOperation(httpMethod: .get, parameters: parameters, onComplete: { (data) in
+            onComplete(data)
+        }) { (apiError) in
+            onError(apiError)
+        }
     }
 }
