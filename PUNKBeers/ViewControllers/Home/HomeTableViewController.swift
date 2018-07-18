@@ -10,12 +10,22 @@ import UIKit
 
 final class HomeTableViewController: UITableViewController {
 
+    private let model: HomeViewModel = HomeViewModel()
     private var beers: [Beer] = [Beer]()
-    private var model: HomeViewModel = HomeViewModel()
+    private var currentPage: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.tableFooterView = UIView()
         registerCell()
+        model.fetchBeers(page: currentPage)
+        model.fetch = { beersList, error in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            self.tableView.reloadData()
+        }
     }
     
     private func registerCell() {
@@ -35,14 +45,20 @@ final class HomeTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return beers.count
+        return model.beers.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! BeerTableViewCell
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "beerTableViewCell", for: indexPath) as! BeerTableViewCell
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == model.beers.count - 1 {
+            currentPage += 1
+            model.fetchBeers(page: currentPage)
+        }
     }
 
     // MARK: - Navigation

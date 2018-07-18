@@ -16,13 +16,13 @@ struct Beer: Codable {
     var description: String
     var image_url: String
     var abv: Float
-    var ibu: Float
-    var target_fg: Float
-    var target_og: Float
-    var ebc: Float
-    var srm: Float
-    var ph: Float
-    var attenuation_level: Float
+    var ibu: Float?
+    var target_fg: Float?
+    var target_og: Float?
+    var ebc: Float?
+    var srm: Float?
+    var ph: Float?
+    var attenuation_level: Float?
     var volume: ValueUnit
     var boil_volume: ValueUnit
     var method: Method
@@ -44,7 +44,7 @@ struct Beer: Codable {
 }
 
 struct ValueUnit: Codable {
-    var value: Float
+    var value: Float?
     var unit: String
 }
 
@@ -66,7 +66,7 @@ struct Fermentation: Codable {
 struct Ingredients: Codable {
     var malt: [Malt]
     var hops: [Hops]
-    var yeast: String
+    var yeast: String?
 }
 
 struct Malt: Codable {

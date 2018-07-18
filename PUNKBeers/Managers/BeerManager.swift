@@ -25,7 +25,7 @@ final class BeerManager: APIManager {
     }
     
     static func getBeersList(page: Int, onComplete: @escaping Handler.Beers, onError: @escaping Handler.Error) {
-        let params = ["per_page" : "20",
+        let params = ["per_page" : "50",
                           "page" : "\(page)"]
         
         self.getBeers(params: params, onComplete: { (beers) in

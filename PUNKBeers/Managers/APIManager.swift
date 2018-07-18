@@ -13,8 +13,8 @@ enum APIError {
     case taskError(error: NSError)
     case noResponse
     case noData
-    case unknown
     case invalidJSON
+    case unknown
 }
 
 enum HTTPMethod: String {
@@ -30,10 +30,10 @@ enum HTTPMethod: String {
 }
 
 struct Handler {
-    typealias Success = (Data) -> Void
-    typealias Error = (APIError) -> Void
-    typealias Beers = ([Beer]) -> Void
-    typealias OneBeer = (Beer) -> Void
+    typealias Success = (Data) -> Swift.Void
+    typealias Error = (APIError) -> Swift.Void
+    typealias Beers = ([Beer]) -> Swift.Void
+    typealias OneBeer = (Beer) -> Swift.Void
 }
 
 class APIManager: NSObject {
@@ -95,7 +95,7 @@ class APIManager: NSObject {
     }
     
     
-    static func GET(parameters: [String: String]?, onComplete: @escaping(Data) -> Void, onError: @escaping(APIError) -> Void) {
+    static func GET(parameters: [String: String]?, onComplete: @escaping Handler.Success, onError: @escaping Handler.Error) {
         applyOperation(httpMethod: .get, parameters: parameters, onComplete: { (data) in
             onComplete(data)
         }) { (apiError) in
