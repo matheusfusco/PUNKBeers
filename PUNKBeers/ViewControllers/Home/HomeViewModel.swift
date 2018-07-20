@@ -30,11 +30,20 @@ final class HomeViewModel: NSObject {
         }
     }
     
+    private var noMoreBeers: Bool = false
+    
     public func fetchBeers(page: Int) {
-        BeerManager.getBeersList(page: page, onComplete: { (beers) in
-            self.beers.append(contentsOf: beers)
-        }) { (apiError) in
-            self.error = apiError
+        if !self.noMoreBeers {
+            BeerManager.getBeersList(page: page, onComplete: { (beers) in
+                if beers.count > 0 {
+                    self.beers.append(contentsOf: beers)
+                }
+                else {
+                    self.noMoreBeers = true
+                }
+            }) { (apiError) in
+                self.error = apiError
+            }
         }
     }
 }

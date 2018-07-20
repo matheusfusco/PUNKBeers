@@ -15,7 +15,6 @@
 		5E7728B520F5154F00C62988 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7728B420F5154F00C62988 /* APIManager.swift */; };
 		5E7728B720F51E6200C62988 /* BeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7728B620F51E6200C62988 /* BeerManager.swift */; };
 		5E7728B920F5333D00C62988 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7728B820F5333D00C62988 /* HomeTableViewController.swift */; };
-		5EB92C9420FE88AA005CA398 /* BeerTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB92C9320FE88AA005CA398 /* BeerTableViewCellViewModel.swift */; };
 		5EF0442C20F685D7002A0631 /* BeerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0442B20F685D7002A0631 /* BeerDetailViewController.swift */; };
 		5EF0443020F6915A002A0631 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0442F20F6915A002A0631 /* HomeViewModel.swift */; };
 		5EF0443220F69197002A0631 /* BeerDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0443120F69197002A0631 /* BeerDetailViewModel.swift */; };
@@ -36,7 +35,6 @@
 		5E7728B420F5154F00C62988 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		5E7728B620F51E6200C62988 /* BeerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerManager.swift; sourceTree = "<group>"; };
 		5E7728B820F5333D00C62988 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
-		5EB92C9320FE88AA005CA398 /* BeerTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		5EF0442B20F685D7002A0631 /* BeerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailViewController.swift; sourceTree = "<group>"; };
 		5EF0442F20F6915A002A0631 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		5EF0443120F69197002A0631 /* BeerDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailViewModel.swift; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 		5EB92C9520FE88B4005CA398 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				5EB92C9320FE88AA005CA398 /* BeerTableViewCellViewModel.swift */,
 				5EF0443320F69412002A0631 /* BeerTableViewCell.swift */,
 				5EF0443420F69412002A0631 /* BeerTableViewCell.xib */,
 			);
@@ -288,7 +285,6 @@
 				5EF0443520F69412002A0631 /* BeerTableViewCell.swift in Sources */,
 				5EF0443220F69197002A0631 /* BeerDetailViewModel.swift in Sources */,
 				5EF0442C20F685D7002A0631 /* BeerDetailViewController.swift in Sources */,
-				5EB92C9420FE88AA005CA398 /* BeerTableViewCellViewModel.swift in Sources */,
 				5EF0443020F6915A002A0631 /* HomeViewModel.swift in Sources */,
 				5E7728B720F51E6200C62988 /* BeerManager.swift in Sources */,
 				5E0190AC20EA937C00C61F62 /* AppDelegate.swift in Sources */,

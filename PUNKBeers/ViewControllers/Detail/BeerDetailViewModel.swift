@@ -9,5 +9,5 @@
 import UIKit
 
 class BeerDetailViewModel: NSObject {
-
+    public var beer: Beer!
 }

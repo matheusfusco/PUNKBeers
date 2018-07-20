@@ -11,13 +11,25 @@ import UIKit
 final class HomeTableViewController: UITableViewController {
 
     private let model: HomeViewModel = HomeViewModel()
-    private var beers: [Beer] = [Beer]()
     private var currentPage: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTableView()
+        fetchBeers()
+    }
+    
+    private func configureTableView() {
         self.tableView.tableFooterView = UIView()
         registerCell()
+    }
+    
+    private func registerCell() {
+        let nib = UINib.init(nibName: "BeerTableViewCell", bundle: Bundle(for: type(of: self)))
+        self.tableView.register(nib, forCellReuseIdentifier: "beerTableViewCell")
+    }
+
+    private func fetchBeers() {
         model.fetchBeers(page: currentPage)
         model.fetch = { beersList, error in
             guard error == nil else {
@@ -28,11 +40,6 @@ final class HomeTableViewController: UITableViewController {
         }
     }
     
-    private func registerCell() {
-        let nib = UINib.init(nibName: "BeerTableViewCell", bundle: Bundle(for: type(of: self)))
-        self.tableView.register(nib, forCellReuseIdentifier: "beerTableViewCell")
-    }
-
     //MARK: - Memory Management
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -50,7 +57,7 @@ final class HomeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "beerTableViewCell", for: indexPath) as! BeerTableViewCell
-
+        cell.beer = model.beers[indexPath.row]
         return cell
     }
     
@@ -61,8 +68,21 @@ final class HomeTableViewController: UITableViewController {
         }
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "showBeerDetailIdentifier", sender: self)
+    }
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        if let indexPath = self.tableView.indexPathForSelectedRow {
+            let selectedBeer = model.beers[indexPath.row]
+            if let detailVC = segue.destination as? BeerDetailViewController {
+                detailVC.model.beer = selectedBeer
+            }
+        }
     }
 }

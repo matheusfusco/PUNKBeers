@@ -25,23 +25,104 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="jRf-13-ORB"/>
                     <connections>
-                        <segue destination="E43-ub-4hg" kind="show" id="gjA-eu-JQ3"/>
+                        <segue destination="E43-ub-4hg" kind="show" identifier="showBeerDetailIdentifier" id="gjA-eu-JQ3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ng-ib-Pd0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="648.79999999999995" y="67.916041979010501"/>
         </scene>
-        <!--Beer Detail View Controller-->
+        <!--Beer!!-->
         <scene sceneID="Igy-yW-f8Z">
             <objects>
                 <viewController id="E43-ub-4hg" customClass="BeerDetailViewController" customModule="PUNKBeers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4XV-3X-He2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NcI-wg-eLg">
+                                <rect key="frame" x="161.5" y="97" width="52" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.17647058823529413" green="0.29803921568627451" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUb-Ia-wQS">
+                                <rect key="frame" x="165.5" y="129" width="44" height="21"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0lI-dn-0Wh">
+                                <rect key="frame" x="16" y="166" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teor alcoólico:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCN-55-iOJ">
+                                <rect key="frame" x="16" y="206" width="117" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escala de Amargor:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FrE-hz-NYR">
+                                <rect key="frame" x="16" y="244" width="156.5" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxi-h6-LUd">
+                                <rect key="frame" x="141" y="207" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOP-zI-h4z">
+                                <rect key="frame" x="180.5" y="245" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aTH-sJ-OTF">
+                                <rect key="frame" x="19" y="298" width="337" height="337"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pfH-Fw-fgI" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hxi-h6-LUd" secondAttribute="trailing" constant="8" id="60Y-lo-l6N"/>
+                            <constraint firstItem="fCN-55-iOJ" firstAttribute="top" secondItem="0lI-dn-0Wh" secondAttribute="bottom" constant="19.5" id="88y-1n-gFM"/>
+                            <constraint firstItem="pfH-Fw-fgI" firstAttribute="bottom" secondItem="aTH-sJ-OTF" secondAttribute="bottom" constant="32" id="9cR-GF-eHD"/>
+                            <constraint firstItem="FrE-hz-NYR" firstAttribute="leading" secondItem="pfH-Fw-fgI" secondAttribute="leading" constant="16" id="CAd-W0-TbU"/>
+                            <constraint firstItem="pfH-Fw-fgI" firstAttribute="trailing" secondItem="aTH-sJ-OTF" secondAttribute="trailing" constant="19" id="EEs-Y2-JBZ"/>
+                            <constraint firstItem="0lI-dn-0Wh" firstAttribute="leading" secondItem="pfH-Fw-fgI" secondAttribute="leading" constant="16" id="Fg9-fX-rCp"/>
+                            <constraint firstItem="hOP-zI-h4z" firstAttribute="centerY" secondItem="FrE-hz-NYR" secondAttribute="centerY" id="LVK-Mh-SLe"/>
+                            <constraint firstItem="PUb-Ia-wQS" firstAttribute="top" secondItem="NcI-wg-eLg" secondAttribute="bottom" constant="8" id="M50-Ih-Ocq"/>
+                            <constraint firstItem="hxi-h6-LUd" firstAttribute="leading" secondItem="fCN-55-iOJ" secondAttribute="trailing" constant="8" id="MVe-o1-fr5"/>
+                            <constraint firstItem="hxi-h6-LUd" firstAttribute="centerY" secondItem="fCN-55-iOJ" secondAttribute="centerY" id="P30-qv-LfZ"/>
+                            <constraint firstItem="NcI-wg-eLg" firstAttribute="centerX" secondItem="pfH-Fw-fgI" secondAttribute="centerX" id="YsL-qe-fJm"/>
+                            <constraint firstItem="aTH-sJ-OTF" firstAttribute="centerX" secondItem="pfH-Fw-fgI" secondAttribute="centerX" id="agb-Zp-gi7"/>
+                            <constraint firstItem="FrE-hz-NYR" firstAttribute="top" secondItem="fCN-55-iOJ" secondAttribute="bottom" constant="16" id="cq1-XN-L1C"/>
+                            <constraint firstItem="fCN-55-iOJ" firstAttribute="leading" secondItem="pfH-Fw-fgI" secondAttribute="leading" constant="16" id="dcH-A2-Vuc"/>
+                            <constraint firstItem="aTH-sJ-OTF" firstAttribute="top" secondItem="FrE-hz-NYR" secondAttribute="bottom" constant="32" id="gVQ-jV-a6M"/>
+                            <constraint firstItem="NcI-wg-eLg" firstAttribute="top" secondItem="pfH-Fw-fgI" secondAttribute="top" constant="33" id="ict-st-GZq"/>
+                            <constraint firstItem="0lI-dn-0Wh" firstAttribute="top" secondItem="PUb-Ia-wQS" secondAttribute="bottom" constant="16" id="ktF-ZK-31P"/>
+                            <constraint firstItem="aTH-sJ-OTF" firstAttribute="leading" secondItem="pfH-Fw-fgI" secondAttribute="leading" constant="19" id="mXK-79-OVA"/>
+                            <constraint firstItem="PUb-Ia-wQS" firstAttribute="centerX" secondItem="pfH-Fw-fgI" secondAttribute="centerX" id="pL8-EK-B7Q"/>
+                            <constraint firstItem="pfH-Fw-fgI" firstAttribute="trailing" secondItem="0lI-dn-0Wh" secondAttribute="trailing" constant="16" id="qpL-2w-OE6"/>
+                            <constraint firstItem="pfH-Fw-fgI" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hOP-zI-h4z" secondAttribute="trailing" constant="8" id="xNN-AD-xuD"/>
+                            <constraint firstItem="hOP-zI-h4z" firstAttribute="leading" secondItem="FrE-hz-NYR" secondAttribute="trailing" constant="8" id="yhb-X9-pSJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pfH-Fw-fgI"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Beer!!" id="McQ-0p-GAI"/>
+                    <connections>
+                        <outlet property="beerAbvLabel" destination="hxi-h6-LUd" id="bNe-B7-TDz"/>
+                        <outlet property="beerDescriptionLabel" destination="0lI-dn-0Wh" id="8Gq-gM-nG5"/>
+                        <outlet property="beerIbuLabel" destination="hOP-zI-h4z" id="nsY-zl-E2Z"/>
+                        <outlet property="beerImage" destination="aTH-sJ-OTF" id="Zgf-MU-JIR"/>
+                        <outlet property="beerNameLabel" destination="NcI-wg-eLg" id="8Zk-p4-9XH"/>
+                        <outlet property="beerTaglineLabel" destination="PUb-Ia-wQS" id="HpL-jz-mrh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PUL-gf-7gB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

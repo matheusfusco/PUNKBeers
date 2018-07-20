@@ -9,29 +9,43 @@
 import UIKit
 
 class BeerDetailViewController: UIViewController {
-
-    @IBOutlet var teste: [UILabel]!
     
+    //MARK: - Lets and Vars
+    let model: BeerDetailViewModel = BeerDetailViewModel()
+    
+    //MARK: - IBOutlets
+    @IBOutlet weak var beerIbuLabel: UILabel!
+    @IBOutlet weak var beerNameLabel: UILabel!
+    @IBOutlet weak var beerAbvLabel: UILabel!
+    
+    @IBOutlet weak var beerDescriptionLabel: UILabel!
+    @IBOutlet weak var beerTaglineLabel: UILabel!
+    @IBOutlet weak var beerImage: UIImageView!
+    
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        //TODO: Por algum motivo, caso eu coloque essa linha de código no ViewDidLoad(setupView), as constraints dão problema
+        self.beerImage.kf.setImage(with: URL(string: "\(self.model.beer.image_url)")!, placeholder: #imageLiteral(resourceName: "ic-placeholder-beer"))
+    }
+    
+    private func setupView() {
+        self.beerNameLabel.text = self.model.beer.name
+        self.beerTaglineLabel.text = self.model.beer.tagline
+        self.beerDescriptionLabel.text = self.model.beer.description
+        self.beerAbvLabel.text = String(format: "%.2f", self.model.beer.abv)
+        self.beerIbuLabel.text = self.model.beer.ibu != nil ? String(format: "%.2f", (self.model.beer.ibu)!) : "-"
+        self.beerImage.kf.setImage(with: nil, placeholder: #imageLiteral(resourceName: "ic-placeholder-beer"))
     }
 
+    //MARK: - Memory Management
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

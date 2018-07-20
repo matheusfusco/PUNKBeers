@@ -7,12 +7,25 @@
 //
 
 import UIKit
+import Kingfisher
 
 class BeerTableViewCell: UITableViewCell {
-
+    
+    public var beer: Beer? {
+        didSet {
+            beerImage.kf.setImage(with: URL(string: "\((beer?.image_url)!)"), placeholder: #imageLiteral(resourceName: "ic-placeholder-beer"))
+            beerNameLabel.text = beer?.name
+            alcoholContentLabel.text = String(format: "Teor alcóolico: %.2f", (beer?.abv)!)
+        }
+    }
+    
+    @IBOutlet weak var beerImage: UIImageView!
+    @IBOutlet weak var beerNameLabel: UILabel!
+    @IBOutlet weak var alcoholContentLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

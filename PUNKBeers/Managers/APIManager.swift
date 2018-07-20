@@ -15,6 +15,7 @@ enum APIError {
     case noData
     case invalidJSON
     case unknown
+    case tooManyRequests
 }
 
 enum HTTPMethod: String {
@@ -84,6 +85,9 @@ class APIManager: NSObject {
                         return
                     }
                     onComplete(data)
+                    break
+                case 429:
+                    onError(.tooManyRequests)
                     break
                 default:
                     onError(.unknown)
