@@ -11,6 +11,7 @@ import Kingfisher
 
 class BeerTableViewCell: UITableViewCell {
     
+    //MARK: - Lets and Vars
     public var beer: Beer? {
         didSet {
             beerImage.kf.setImage(with: URL(string: "\((beer?.image_url)!)"), placeholder: #imageLiteral(resourceName: "ic-placeholder-beer"))
@@ -19,10 +20,12 @@ class BeerTableViewCell: UITableViewCell {
         }
     }
     
+    //MARK: - IBOutlets
     @IBOutlet weak var beerImage: UIImageView!
     @IBOutlet weak var beerNameLabel: UILabel!
     @IBOutlet weak var alcoholContentLabel: UILabel!
     
+    //MARK: - Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
 

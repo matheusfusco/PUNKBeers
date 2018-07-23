@@ -10,15 +10,18 @@ import UIKit
 
 final class HomeTableViewController: UITableViewController {
 
+    //MARK: - Lets and Vars
     private let model: HomeViewModel = HomeViewModel()
     private var currentPage: Int = 1
     
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
         fetchBeers()
     }
     
+    //MARK: - Custom Methods
     private func configureTableView() {
         self.tableView.tableFooterView = UIView()
         registerCell()
@@ -39,14 +42,8 @@ final class HomeTableViewController: UITableViewController {
             self.tableView.reloadData()
         }
     }
-    
-    //MARK: - Memory Management
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
-    // MARK: - Table view data source
+    // MARK: - TableView DataSource Methods
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -72,8 +69,15 @@ final class HomeTableViewController: UITableViewController {
         return UITableViewAutomaticDimension
     }
     
+    //MARK: - TableView Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "showBeerDetailIdentifier", sender: self)
+    }
+    
+    //MARK: - Memory Management
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Navigation

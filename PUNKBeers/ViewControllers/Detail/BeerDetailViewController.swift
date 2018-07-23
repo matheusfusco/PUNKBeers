@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BeerDetailViewController: UIViewController {
+final class BeerDetailViewController: UIViewController {
     
     //MARK: - Lets and Vars
     let model: BeerDetailViewModel = BeerDetailViewModel()
@@ -34,6 +34,7 @@ class BeerDetailViewController: UIViewController {
         self.beerImage.kf.setImage(with: URL(string: "\(self.model.beer.image_url)")!, placeholder: #imageLiteral(resourceName: "ic-placeholder-beer"))
     }
     
+    //MARK: - Custom Methods
     private func setupView() {
         self.beerNameLabel.text = self.model.beer.name
         self.beerTaglineLabel.text = self.model.beer.tagline

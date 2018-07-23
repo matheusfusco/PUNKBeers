@@ -10,6 +10,7 @@ import UIKit
 
 final class HomeViewModel: NSObject {
     
+    //MARK: - Lets and Vars
     public typealias Closure = ([Beer]?, APIError?) -> ()
     
     public var fetch: Closure?
@@ -32,6 +33,7 @@ final class HomeViewModel: NSObject {
     
     private var noMoreBeers: Bool = false
     
+    //MARK: - Model Methods
     public func fetchBeers(page: Int) {
         if !self.noMoreBeers {
             BeerManager.getBeersList(page: page, onComplete: { (beers) in

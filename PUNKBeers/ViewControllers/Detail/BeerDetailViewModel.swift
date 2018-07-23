@@ -8,6 +8,6 @@
 
 import UIKit
 
-class BeerDetailViewModel: NSObject {
+final class BeerDetailViewModel: NSObject {
     public var beer: Beer!
 }
